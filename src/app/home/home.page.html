@@ -1,0 +1,31 @@
+<ion-header>
+
+  <ion-row class="ion-align-items-center header-line topMenu">
+    <ion-col size="1">
+      <ion-icon name="reorder-three"></ion-icon>
+    </ion-col>
+    <ion-col size="11" class="topTitle">
+      Disk do Odair
+    </ion-col>
+  </ion-row>
+
+  <ion-row class="ion-align-items-center header-subline">
+    <ion-slides pager="false" class="slide-line menuSlide" [options]="slideOpts">
+      <ion-slide *ngFor="let menu of menus; let ix = index" class="menuItem" (click)="menuChange(menu.nome)">
+        {{ menu.nome }}
+      </ion-slide>
+    </ion-slides>
+  </ion-row>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-row>
+    <ion-col size="6" *ngFor="let bebida of bebidas; let ix = index"> 
+      <ion-row>
+        <ion-col size="12">
+          {{bebida.nome}}
+        </ion-col>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+</ion-content>
