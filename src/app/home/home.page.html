@@ -20,12 +20,29 @@
 
 <ion-content [fullscreen]="true">
   <ion-row>
-    <ion-col size="6" *ngFor="let bebida of bebidas; let ix = index"> 
+    <ion-col size="6" class="prod" *ngFor="let bebida of bebidas; let ix = index"> 
       <ion-row>
         <ion-col size="12">
-          {{bebida.nome}}
+          {{ bebida.nome }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" class="valor">
+          {{ formataValor(bebida.valor) }}
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <ion-col size="12" class="btn-details">
+          <span class="details"> + Detalhes </span>
         </ion-col>
       </ion-row>
     </ion-col>
   </ion-row>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed" class="btn-order"> <!-- botao do carrinho -->
+  <ion-fab-button>
+    <ion-icon name="cart-outline"></ion-icon>
+  </ion-fab-button>
+</ion-fab> 
+
 </ion-content>
