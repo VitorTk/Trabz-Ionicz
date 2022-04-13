@@ -46,23 +46,94 @@
   width: 207px !important;
 }
 
-.prod{
-  margin-top: 15px;
-  text-align: center;
-  font-weight: bold;
-}
-
-.btn-details{
+.prod {
   margin-top: 15px;
   text-align: center;
 }
 
+.btn-details {
+  margin-top: 15px;
+  text-align: center;
+}
 
-.details{
+.details {
+  font-size: 10px;
   padding: 6px 12px;
   background-color: var(--amarelo);
-  color: var(--white-smoke);
+  color: black;
   width: 100px;
   border-radius: 4px;
   text-align: center;
+  border: 1px solid #efefef;
+
+}
+
+.img-produto {
+  position: absolute;
+  width: 80px;
+  height: 20px !important;
+  left: 32%;
+}
+
+.drink-name {
+  margin-top: 100px;
+}
+
+.modal-content {
+  width: 100%;
+  // height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  padding: 50px;
+
+}
+
+.modal-name {
+  font-weight: bold;
+  font-size: 24px;
+  color: orange;
+}
+
+.headerModal {
+  padding: 15px;
+  box-shadow: 0 0 10px 2px black;
+  background-color: orange;
+  font-weight: bold;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 40%
+}
+
+.modal-price {
+  font-weight: bold;
+  color: orange;
+}
+
+.wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background-color: gray;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  gap: 50px;
+  margin: 20px 40px
+}
+
+.increse {
+  font-size: 18px;
 }

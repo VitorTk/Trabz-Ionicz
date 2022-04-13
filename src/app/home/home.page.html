@@ -20,9 +20,16 @@
 
 <ion-content [fullscreen]="true">
   <ion-row>
-    <ion-col size="6" class="prod" *ngFor="let bebida of bebidas; let ix = index"> 
+    <ion-col size="6" class="prod" *ngFor="let bebida of bebidas; let ix = index">
       <ion-row>
-        <ion-col size="12">
+
+        <ion-row>
+          <div class="img-produto">
+            <img class="drink-image" [src]="bebida.img" />
+          </div>
+        </ion-row>
+
+        <ion-col class="drink-name" size="12">
           {{ bebida.nome }}
         </ion-col>
       </ion-row>
@@ -33,16 +40,71 @@
       </ion-row>
       <ion-row>
         <ion-col size="12" class="btn-details">
-          <span class="details"> + Detalhes </span>
+          <span class="details" (click)="showDetails(bebida)"> + Detalhes </span>
         </ion-col>
       </ion-row>
     </ion-col>
   </ion-row>
 
-<ion-fab vertical="bottom" horizontal="end" slot="fixed" class="btn-order"> <!-- botao do carrinho -->
-  <ion-fab-button>
-    <ion-icon name="cart-outline"></ion-icon>
-  </ion-fab-button>
-</ion-fab> 
+  <ion-fab vertical="bottom" color="orange" horizontal="end" slot="fixed" class="btn-order">
+    <!-- botao do carrinho -->
+    <ion-fab-button>
+      <ion-icon name="cart-outline"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-modal [isOpen]="isModalOpen">
+    <ng-template>
+      <app-modal-content>
+        <div class="wrapper">
+          <header class="headerModal">
+            <ion-icon name="arrow-back-outline" (click)="backMenu()"></ion-icon>
+                Disk do Odair
+          </header>
+           
+
+          <div class="modal-content">
+
+            <div class="modal-name">
+              <div>{{drinkSelected.nome}}</div>
+            </div>
+
+            <div>
+              <div>
+                <img class="drink-image" [src]="drinkSelected.img" />
+              </div>
+            </div>
+
+            <div class="modal-desc">
+              <div>{{drinkSelected.desc}}</div>
+
+            </div>
+
+
+
+            <ion-fab vertical="bottom" horizontal="end" slot="fixed" class="btn-order">
+              <!-- botao do carrinho -->
+              <ion-fab-button>
+                <ion-icon name="cart-outline"></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+
+          </div>
+          <footer class="footer">
+            <div class="footer-content">
+              <div class="modal-price">
+                <div>{{formataValor(currentPrice)}}</div>
+
+              </div>
+              <div > <span class="details increse" (click)="plusPrice(drinkSelected.valor)"> + </span></div>
+              <div>{{amount}}</div>
+              <div> <span class="details increse" (click)="minusPrice(drinkSelected.valor)"> - </span></div>
+
+            </div>
+          </footer>
+        </div>
+      </app-modal-content>
+    </ng-template>
+  </ion-modal>
 
 </ion-content>
