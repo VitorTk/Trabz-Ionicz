@@ -23,13 +23,11 @@
     <ion-col size="6" class="prod" *ngFor="let bebida of bebidas; let ix = index">
       <ion-row>
 
-        <ion-row>
+
+        <ion-col class="drink-name" size="12">
           <div class="img-produto">
             <img class="drink-image" [src]="bebida.img" />
           </div>
-        </ion-row>
-
-        <ion-col class="drink-name" size="12">
           {{ bebida.nome }}
         </ion-col>
       </ion-row>

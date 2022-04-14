@@ -69,10 +69,14 @@
 }
 
 .img-produto {
-  position: absolute;
   width: 80px;
-  height: 20px !important;
-  left: 32%;
+    height: 100px !important;
+    left: 32%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    // background: transparent;
 }
 
 .drink-name {
